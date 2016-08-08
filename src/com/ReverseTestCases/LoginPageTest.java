@@ -4,13 +4,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.PageObjects.AwbDetailsAndAction;
 import com.PageObjects.LoginAndLogoutPage;
 
 import io.appium.java_client.AppiumDriver;
@@ -25,27 +25,29 @@ public class LoginPageTest{
 	@BeforeClass
 	public void setUp() throws MalformedURLException{
 		
-		DesiredCapabilities capabilities = new DesiredCapabilities();
+DesiredCapabilities capabilities = new DesiredCapabilities();
 		
 		capabilities.setCapability("appium-version", "1.0");
 		
 		capabilities.setCapability("platformName", "Android");
 		
-		capabilities.setCapability("platformVersion", "4.4");
+		capabilities.setCapability("platformVersion", "6.0");
 		
-		capabilities.setCapability("deviceName", "Google Nexus 5");
+		//capabilities.setCapability("deviceName", "Google Nexus 5");
+		
+		capabilities.setCapability("deviceName", "Micromax AQ4501");
 		
 		//capabilities.setCapability("deviceName", "Y541-U02");
 		
-		capabilities.setCapability("app", "/Users/eshan/Documents/workspace/NuvoExReverse/App/app-staging-release.apk");
+		capabilities.setCapability("app", "/Users/eshan/Documents/workspace/NuvoExReverse/App/reverse-staging.apk");
 		
 		capabilities.setCapability("appPackage", "com.nuvoex.nuvoreverseapp.staging");
 		
 		capabilities.setCapability("appActivity", "com.nuvoex.nuvoreverseapp.LoginActivity");
 		
-		driver = new AndroidDriver<WebElement>(new URL("http://192.168.1.10:4723/wd/hub"), capabilities);
+		driver = new AndroidDriver<WebElement>(new URL("http://192.168.1.22:4723/wd/hub"), capabilities);
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 		
 
 	}
@@ -57,7 +59,7 @@ public class LoginPageTest{
 		
 		obj.loginToAccount("arun.kumar1", "arun");
 		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		
 		System.out.println(driver.getContext());
 			
@@ -67,12 +69,9 @@ public class LoginPageTest{
 	}
 	
 	@Test(priority=2)
-	public void logoutTest() throws InterruptedException{
-	
-	Thread.sleep(10);	
-	LoginAndLogoutPage obj = new LoginAndLogoutPage(driver);
-	
-	obj.logoutFromAccount();
+	public void getAWBListTest(){
+		AwbDetailsAndAction awb = new AwbDetailsAndAction(driver);
+		awb.getAwbList();
 	}
 	
 	@AfterClass

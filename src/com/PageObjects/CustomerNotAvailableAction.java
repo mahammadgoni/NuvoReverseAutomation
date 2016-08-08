@@ -15,7 +15,27 @@ public class CustomerNotAvailableAction {
 		PageFactory.initElements(new AppiumFieldDecorator(driver,30,TimeUnit.SECONDS), this);
 	}
 	
-	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[4]")
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Customer not available']")
 	public WebElement customerNotAvailable;
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Proceed']")
+	public WebElement proceedBtn;
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Decline']")
+	public WebElement declineBtn;
+	
+	// Selecting Customer not available method
+	public void selectCNA(){
+		customerNotAvailable.click();
+	}
+	
+	// Selecting Proceed method
+	public void selectProceed(){
+		proceedBtn.click();
+	}
+	// Selecting Decline method
+	public void selectDecline(){
+		declineBtn.click();
+	}
 
 }

@@ -15,7 +15,40 @@ public class DeferredAction {
 		PageFactory.initElements(new AppiumFieldDecorator(driver,30,TimeUnit.SECONDS), this);
 	}
 	
-	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ListView[1]/android.widget.CheckedTextView[2]")
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Deferred']")
 	public WebElement deferred;
+	
+	@AndroidFindBy(xpath="//android.widget.CheckedTextView[position()=1]")
+	public WebElement deferredDate1;
+	
+	@AndroidFindBy(xpath="//android.widget.CheckedTextView[position()=2]")
+	public WebElement deferredDate2;
+	
+	@AndroidFindBy(xpath="//android.widget.CheckedTextView[position()=3]")
+	public WebElement deferredDate3;
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Submit']")
+	public WebElement submitBtn;
+	
+	@AndroidFindBy(xpath="//android.widget.Button[@text='Cancel']")
+	public WebElement cancelBtn;
+	
+	// Select Deferred Option Method
+	public void selectDeferred(){
+		deferred.click();
+	}
+	
+	// Select Deferred Date 
+	public void selectDeferredDate(){
+		deferredDate1.click();
+	}
+	// Click On submit method
+	public void clickOnSubmit(){
+		submitBtn.click();
+	}
+	// Click On Cancel Method
+	public void clickOnCancel(){
+		cancelBtn.click();
+	}
 
 }
