@@ -94,9 +94,16 @@ public class CompletePickUpAction {
 
 	// Take an Image and save it method
 	public void takeAnImg() {
-		takePhoto.click();
-		captureImg.click();
-		saveImg.click();
+		boolean saveBtn = takePhoto.isDisplayed();
+		if (saveBtn == true) {
+			takePhoto.click();	
+			saveImg.click();
+		}else {
+			saveImg.click();
+		}
+//		takePhoto.click();
+//		captureImg.click();
+		
 		// AppiumDriver<WebElement> driver = null;
 		// Actions action = new Actions(driver);
 		// action.sendKeys(Keys.ENTER);
@@ -106,9 +113,15 @@ public class CompletePickUpAction {
 
 	// Refresh the image or cancel image
 	public void refreshImg() {
-		retakeImg.click();
-		captureImg.click();
-		saveImg.click();
+		boolean refrsBtn = retakeImg.isDisplayed();
+		if (refrsBtn == true) {
+			retakeImg.click();
+			takeAnImg();
+			
+		}
+//		retakeImg.click();
+//		captureImg.click();
+//		saveImg.click();
 
 	}
 
@@ -129,7 +142,7 @@ public class CompletePickUpAction {
 
 	// Enter No of Product to be picked
 	public void enterNoOfProduct(String no) {
-		enterNoOfProudct.sendKeys(no+"\n");
+		enterNoOfProudct.sendKeys(no);
 		clickOnDone.click();
 	}
 
@@ -147,9 +160,10 @@ public class CompletePickUpAction {
 
 	// Click On Submit method
 	public void enterCommentAndProceed(String commnt) {
-		enterComment.sendKeys(commnt);
+		enterComment.sendKeys(commnt+"\n");
 		clickOnProceed.click();
 		System.out.println(qcReviewMessage.getText());
+		clickOnProceed.click();
 
 	}
 
@@ -162,7 +176,7 @@ public class CompletePickUpAction {
 
 	// Enter QR code and Update the status
 	public void enterQrAndUpdateStatus(String code) {
-		enterQrCode.sendKeys(code);
+		enterQrCode.sendKeys(code+"\n");
 		updateStatus.click();
 		deliveredDone.click();
 	}

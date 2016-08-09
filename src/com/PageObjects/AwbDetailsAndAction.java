@@ -12,6 +12,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class AwbDetailsAndAction {
 
+
 	public AwbDetailsAndAction(AppiumDriver<WebElement> driver) {
 		PageFactory.initElements(new AppiumFieldDecorator(driver, 30, TimeUnit.SECONDS), this);
 	}
@@ -19,14 +20,15 @@ public class AwbDetailsAndAction {
 	@AndroidFindBy(xpath = "//android.widget.LinearLayout[@resource-id='com.nuvoex.nuvoreverseapp.staging:id/card_container']")
 	public List<WebElement> getAwbList;
 
-	@AndroidFindBy(xpath = "//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.view.View[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.support.v7.widget.RecyclerView[1]/android.widget.LinearLayout[1]")
+	@AndroidFindBy(xpath = "//android.widget.LinearLayout[position()=1 and @resource-id='com.nuvoex.nuvoreverseapp.staging:id/card_container']")
 	public WebElement clickOnAwb;
 
 	@AndroidFindBy(xpath = ".//android.widget.Button[@text='Update']")
 	public WebElement clickOnUpdate;
 
+	
 	// Select on Awb method
-	public void selectAwbAndUpdate() {
+	public void select1stAwbAndUpdate() {
 		clickOnAwb.click();
 		clickOnUpdate.click();
 	}

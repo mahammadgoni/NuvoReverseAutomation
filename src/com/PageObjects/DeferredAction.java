@@ -38,8 +38,8 @@ public class DeferredAction {
 		deferred.click();
 	}
 	
-	// Select Deferred Date 
-	public void selectDeferredDate(){
+	// Select Deferred Date to Next Date
+	public void selectDeferredDate1(){
 		deferredDate1.click();
 	}
 	// Click On submit method

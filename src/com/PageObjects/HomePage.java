@@ -24,6 +24,9 @@ public class HomePage {
 	@AndroidFindBy(xpath="//android.widget.Button[@text='Allow']")
 	public WebElement allowBtn;
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[@text='VNK0080002'  and  @index='0']")
+	public WebElement selectAwb;
+	
 	@AndroidFindBy(xpath="//android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.widget.DrawerLayout[1]/android.view.View[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.support.v7.widget.RecyclerView[1]")
 	public WebElement drsLIst;
 	
@@ -35,13 +38,18 @@ public class HomePage {
 		allowBtn.click();
 	}
 	
-	// Scroll till last AWB and Scroll Up method
+	// Scroll to method will scroll until it gets mathching text
 	public void scrollDwonAndUp(){
-		JavascriptExecutor js = (JavascriptExecutor)driver;
-		HashMap<String, String> scrollObject = new HashMap<String, String>();
-		scrollObject.put("direction", "down");
-		js.executeScript("mobile: scroll", scrollObject);
-	}
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		HashMap<String, String> scrollObject = new HashMap<String, String>();
+//		scrollObject.put("direction", "down");
+//		js.executeScript("mobile: scroll", scrollObject);
+		//boolean selectAwb = true;
+		//selectAwb
+		
+		}
+		
+	
 	
 	
 	// Get all AWB Lists method
