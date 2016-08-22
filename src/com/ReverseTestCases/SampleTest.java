@@ -60,7 +60,7 @@ public class SampleTest {
 
 		capabilities.setCapability("appActivity", "com.nuvoex.nuvoreverseapp.LoginActivity");
 
-		driver = new AndroidDriver<WebElement>(new URL("http://192.168.1.22:4723/wd/hub"), capabilities);
+		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		driver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
 

@@ -5,11 +5,26 @@
     <classes>
       <class name="com.ReverseTestCases.SampleTest">
         <methods>
-          <include name="signInTest"/>
+          <include name="firstQuestionTest"/>
+          <include name="thirdQuestionTest"/>
           <include name="enterQRCodeTest"/>
-          <include name="setUp"/>
+          <include name="selectCancelledTest"/>
+          <include name="clickOnSubmitTest"/>
           <include name="tearDown"/>
+          <include name="enterRemarksTest"/>
+          <include name="fouthQuestionTest"/>
+          <include name="selectCompleteTest"/>
+          <include name="selectCustomerNotAvailableTest"/>
+          <include name="selectDefferedTest"/>
           <include name="takeAnImgTest"/>
+          <include name="selectDeffered1AndSubmitTest"/>
+          <include name="logoutTest"/>
+          <include name="selectCNAAndSubmitTest"/>
+          <include name="fifthQuestionTest"/>
+          <include name="selectCancelled1AndSubmitTest"/>
+          <include name="setUp"/>
+          <include name="seccondQuestionTest"/>
+          <include name="signatureTest"/>
         </methods>
       </class> <!-- com.ReverseTestCases.SampleTest -->
     </classes>
